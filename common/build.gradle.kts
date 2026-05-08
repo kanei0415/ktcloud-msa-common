@@ -2,7 +2,13 @@ plugins {
     kotlin("jvm")
     kotlin("kapt")
     kotlin("plugin.jpa")
+
+    id("java-library")
+    id("maven-publish")
 }
+
+group = "com.github.kanei0415"
+version = "1.0.0"
 
 dependencies {
     implementation("org.springframework.boot:spring-boot-starter-data-jpa")
@@ -20,5 +26,13 @@ dependencies {
 sourceSets {
     main {
         kotlin.srcDir("build/generated/source/kapt/main")
+    }
+}
+
+publishing {
+    publications {
+        create<MavenPublication>("mavenJava") {
+            from(components["java"])
+        }
     }
 }
