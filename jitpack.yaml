@@ -1,5 +1,8 @@
 jdk:
-  - openjdk17
+  - openjdk21
+
+before_install:
+  - chmod +x gradlew
 
 install:
   - ./gradlew :common:publishToMavenLocal -Pgroup=com.github.kanei0415 -Pversion=$JITPACK_VERSION
