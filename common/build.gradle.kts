@@ -32,6 +32,7 @@ sourceSets {
 publishing {
     publications {
         create<MavenPublication>("mavenJava") {
+            artifactId = "ktcloud-market-msa-common"
             from(components["java"])
         }
     }
