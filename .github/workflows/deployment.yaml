@@ -1,3 +1,9 @@
+name: CI Workflow
+
+on:
+  push:
+    branches: [ "main" ]
+
 tag-version:
     needs: build-and-push
     runs-on: ubuntu-latest
